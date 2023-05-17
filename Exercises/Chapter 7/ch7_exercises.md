@@ -34,7 +34,7 @@ $$ x \leq ξ \implies (x−ξ)_+^3 = 0$$
 
 $$ \implies f(x) = \beta_0 + \beta_1 x + \beta_2 x^2 + \beta_3 x^3 $$
 
-$$ f(x) = f_1(x) \implies \begin{cases} a_1 = \beta_0 \\ b_1 = \beta_1 \\ c_1 = \beta_2 \\ d_1 = \beta_3 \\\end{cases} $$
+$$ f(x) = f_1(x) \implies \begin{cases} a_1 = \beta_0 \\ b_1 = \beta_1 \\ c_1 = \beta_2 \\ d_1 = \beta_3 \\ \end{cases} $$
 
 
 
@@ -92,13 +92,13 @@ $$ \hat{g} = \arg \min_g \bigg(\sum_{i=1}^n (y_i - g(x_i))^2 + \lambda \int \big
 
 where $g^{(m)}$ represents the mth derivative of g (and $g^{(0)}$ = g). Provide example sketches of gˆ in each of the following scenarios.
 
-(a) $\lambda=\infin,\ m = 0$
+(a) $\lambda=\infty,\ m = 0$
 
-(b) $\lambda=\infin,\ m = 1$
+(b) $\lambda=\infty,\ m = 1$
 
-(c) $\lambda=\infin,\ m = 2$
+(c) $\lambda=\infty,\ m = 2$
 
-(d) $\lambda=\infin,\ m = 3$
+(d) $\lambda=\infty,\ m = 3$
 
 (e) $\lambda=0,\ m = 3$
 
@@ -112,7 +112,7 @@ $$ g(x) =  2 * \exp(0.5*x) + 1$$
 
 (a)
 
-When $\lambda=\infin$ the loss term is ignored so we can look only at the penalty term; the function is hence minimized where the penalty term is zero.
+When $\lambda=\infty$ the loss term is ignored so we can look only at the penalty term; the function is hence minimized where the penalty term is zero.
 
 In this scenario, the penalty term is zero when $g(x) = 0$.
 
@@ -148,7 +148,7 @@ The penatly coefficient $\lambda=0$, this removes the impact of the penalty on t
 ## Question 3
 Suppose we fit a curve with basis functions $b_1(X) = X, b_2(X) = (X-1)^2I(X \geq 1)$. (Note that $I(X \geq 1)$ equals to 1 for $X \geq 1$ and 0 otherwise.) We fit the linear regression model
 
-$$ Y = \beta_0 + \beta_1 b_1(X) + \beta_2 b_2(X) + \epsilon$$
+$$ Y = \beta_0 + \beta_1 b_1(X) + \beta_2 b_2(X) + \epsilon $$
 
 and obtain coefficient estimates $\hat{\beta}_0 = 1, \hat{\beta}_1 = 1, \hat{\beta}_2 = -2$. Sketch the estimated cureve between X = -2 and X = 2. Not the intercepts, slopes, and other relevant information.
 
@@ -160,11 +160,11 @@ When we plot the fitted curve, we get
 
 As we can guess, since we fit the curve using two different basis functions, we get a curve that has different slopes in two different areas of the plot.
 
-- $$ \text{For} \ X \lt 1, \ \text{we get} \ \hat{f}(X) = 1 + X$$
+$$ \text{For} \ X \lt 1, \ \text{we get} \ \hat{f}(X) = 1 + X $$
 
 When $X$ is less than 1, the second basis function returns 0, indicating that it does not have an impact on the curve. Thus, we can conclude that the slope of the curve is 1 when the value of $X$ is less than 1, and the curve is linear in this region. The intercept of the curve is 1.
 
-- $$ \text{For} \ X \geq 1, \ \text{we get} \ \hat{f}(X) = 1 + X - 2(X-1)^2$$
+$$ \text{For} \ X \geq 1, \ \text{we get} \ \hat{f}(X) = 1 + X - 2(X-1)^2 $$
 
 Taking derivative of this equation
 
@@ -183,20 +183,20 @@ and obtain coefficient estimates $\hat{\beta}_0 = 1, \hat{\beta}_1 = 1, \hat{\be
 
 ![Figure 13](/figures/Figure_13.png)
 
-$$ \hat{Y} = \begin{cases} 1 & \text{if} & X \isin [-2, 0[ \bigcup [2, 3] \bigcup [5, 6] \\ 2& \text{if} & X \isin [0,1[ \\ 4 & \text{if} & X \isin]4,5] \\ 3 - X & \text{if} & X \isin[1,2] \\ 3X - 8 & \text{if} & X \isin[3,4]\end{cases}$$
+$$ \hat{Y} = \begin{cases} 1 & \text{if} & X \in [-2, 0[ \bigcup [2, 3] \bigcup [5, 6] \\ 2& \text{if} & X \in [0,1[ \\ 4 & \text{if} & X \in ]4,5] \\ 3 - X & \text{if} & X \in [1,2] \\ 3X - 8 & \text{if} & X \in [3,4 ]\end{cases} $$
 
 ## Question 5
 Consider two curves, $\hat{g}_1$ and $\hat{g}_2$, defined by
 
-$$ \hat{g}_1 = \arg \min_g \bigg(\sum_{i=1}^n (y_i - g(x_i))^2 + \lambda \int \bigg[ g^{(3)}(x)\bigg]^2 dx \bigg)$$
+$$ \hat{g}_1 = \arg \min_g \bigg(\sum_{i=1}^n (y_i - g(x_i))^2 + \lambda \int \bigg[ g^{(3)}(x)\bigg]^2 dx \bigg) $$
 
-$$ \hat{g}_2 = \arg \min_g \bigg(\sum_{i=1}^n (y_i - g(x_i))^2 + \lambda \int \bigg[ g^{(4)}(x)\bigg]^2 dx \bigg)$$
+$$ \hat{g}_2 = \arg \min_g \bigg(\sum_{i=1}^n (y_i - g(x_i))^2 + \lambda \int \bigg[ g^{(4)}(x)\bigg]^2 dx \bigg) $$
 
 where $g^{(m)}$ represents mth derivative of g.
 
-(a) As $\lambda \rightarrow \infin$, will $\hat{g}_1$ or $\hat{g}_2$ have the smaller training RSS?
+(a) As $\lambda \rightarrow \infty$, will $\hat{g}_1$ or $\hat{g}_2$ have the smaller training RSS?
 
-(b) As $\lambda \rightarrow \infin$, will $\hat{g}_1$ or $\hat{g}_2$ have the smaller test RSS?
+(b) As $\lambda \rightarrow \infty$, will $\hat{g}_1$ or $\hat{g}_2$ have the smaller test RSS?
 
 (c) For $\lambda = 0$, will $\hat{g}_1$ or $\hat{g}_2$ have the smaller training RSS?
 
