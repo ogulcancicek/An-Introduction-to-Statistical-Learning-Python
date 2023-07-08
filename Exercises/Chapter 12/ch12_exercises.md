@@ -31,11 +31,11 @@ Therefore, we can conclude that the left-hand side and the right-hand side are e
 
 (b) The objective function (12.17) is defined as:
 
-$$ \min_{C_1, \dots, C_K} \bigg\{ \sum_{k=1}^K \frac{1}{|C_k|} \sum_{i, i' \in C_k} \sum_{j=1}^p (x_{ij} - x_{i'j})^2\bigg\} $$
+$$ \min_{C_1, \dots, C_K} \{ \sum_{k=1}^K \frac{1}{|C_k|} \sum_{i, i' \in C_k} \sum_{j=1}^p (x_{ij} - x_{i'j})^2\} $$
 
 By using the equation given in (a), we can rewrite (12.17) as:
 
-$$ \min_{C_1, \dots, C_K} \bigg\{ \sum_{k=1}^K 2 \sum_{i \in C_k} \sum_{j=1}^p (x_{ij} - \bar{x}_{kj})^2 \bigg\} $$
+$$ \min_{C_1, \dots, C_K} \{ \sum_{k=1}^K 2 \sum_{i \in C_k} \sum_{j=1}^p (x_{ij} - \bar{x}_{kj})^2 \} $$
 
 The K-Means algorithm aims to minimize within-cluster variance. This means that each observation is assigned to the nearest cluster centroid, minimizing the distance between the observations and their assigned cluster centroids. Consequently, the K-Means algorithm decreases the objective (12.17), resulting in reduced within-cluster variance.
 
@@ -164,7 +164,7 @@ $$ x_{ij} \approx \sum_{m=1}^M z_{im}\phi_{jm} \tag{12.5}$$
 
 And:
 
-$$ \min_{A\in\R^{n\times M}, B\in\R^{n\times M}} \bigg\{ \sum_{j=1}^p\sum_{i=1}^n \bigg( x_{ij} - \sum_{m=1}^M a_{im}b_{jm}\bigg)^2 \bigg\} \tag{12.6} $$
+$$ \min_{A\in\R^{n\times M}, B\in\R^{n\times M}} \{ \sum_{j=1}^p\sum_{i=1}^n ( x_{ij} - \sum_{m=1}^M a_{im}b_{jm})^2 \} \tag{12.6} $$
 
 If we assume that we have a dataset with the principal component scores as features and the real feature values from the original data as the response, we can view the problem of predicting the real feature values using principal component scores as a regression problem.
 
@@ -174,7 +174,7 @@ $$ \hat{Y} = \beta_0 + \beta_1 X_1 + \dots + \beta_p X_p $$
 
 We can modify this equation as follows:
 
-$$ \hat{x}_{ij} = \beta_{j1}z_{i1} + \beta_{j2}z_{i2} + \dots + \beta_{jM}z_{iM} $$
+$$ \hat{x_{ij}} = \beta_{j1}z_{i1} + \beta_{j2}z_{i2} + \dots + \beta_{jM}z_{iM} $$
 
 By performing M separate linear regressions, one for each principal component loading vector, we can estimate the regression coefficients $(\beta_{0j}, \beta_{1j}, \ldots, \beta_{Mj})$ that correspond to the loading vector $\phi_{jm}$ for feature $j$.
 
